@@ -11,15 +11,15 @@ while (i<4) {
     informacion.push({nombre, edad})
     i++;
 }
-
-let mayor=0;
-
 console.log(informacion);
 
-informacion.forEach((items)=>{
-    console.log(items.edad);
-   mayor=Math.max(...items.edad)
-})
+
+let mayor=informacion[0].edad
+informacion.forEach(element => {
+    if (element.edad>mayor) {
+        mayor=element.edad
+    }
+});
 
 
 
