@@ -17,27 +17,20 @@ while (i<cantidad) {
     i++
 }
 
-let mayorNota=data[0].notaDefinitiva
-let menorNota=data[0].notaDefinitiva
-let hombres=0
-let mujeres=0
 
-data.forEach((element)=>{
-    if (element.notaDefinitiva>mayorNota) {
-        mayorNota=element.notaDefinitiva
-    }
-    
-    if(element.notaDefinitiva<menorNota){
-        menorNota=element.notaDefinitiva
-    }
+//METODO REDUCE, reduce a un solo dato como su nombre lo indica
 
-    if (element.sexo==="M") {
-        hombres++;
-    }
-    if(element.sexo==="F"){
-        mujeres++;
-    }
-})
+const mayorNota = data.reduce((max, estudiante) => max.notaDefinitiva > estudiante.notaDefinitiva ? max : estudiante).notaDefinitiva;
+
+const menorNota=data.reduce((min, estudiante) => min.notaDefinitiva<estudiante.notaDefinitiva? min : estudiante).notaDefinitiva;
+
+//METODO FILTER, crea un nuevo array solo con los que cumplen la condicion
+
+const hombres = data.filter(estudiante => estudiante.sexo === 'M').length;
+
+const mujeres = data.filter(esttudiantes=>esttudiantes.sexo=== 'F').length;
+
+
 
 console.log(`La nota mas alta fue ${mayorNota}, la nota mas baja fue : ${menorNota}, la cantidad de hombres fue de ${hombres}
 y la cantidad de mujeres fueron: ${mujeres}`);
