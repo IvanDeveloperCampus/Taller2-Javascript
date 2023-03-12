@@ -14,15 +14,8 @@ while (i<4) {
 console.log(informacion);
 
 
-let mayor=informacion[0].edad
-informacion.forEach(element => {
-    if (element.edad>mayor) {
-        mayor=element.edad
-    }
-});
+let personaMayor=informacion.reduce((personaActual,personaMayor)=>{
+    return personaActual.edad>personaMayor.edad ? personaActual : personaMayor;
+})
 
-
-
-let persona= informacion.find(infor=> infor.edad==mayor);
-
-console.log(`${persona.nombre} fue la persona con un mayor puntaje ${mayor}`);
+console.log(`${personaMayor.nombre} fue la persona con mayor edad ${personaMayor.edad}`);
