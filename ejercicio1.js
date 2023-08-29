@@ -4,11 +4,14 @@ mostrar un mensaje "Estudie“, de lo contrario un mensaje que
 diga "becado" */
 
 
-const nota1=1, nota2=2, nota3=2;
-const prom=(nota1+nota2+nota3)/3
+export const calcularEstadoPromedio=()=>{
+    const nota1=1, nota2=2, nota3=2;
+    const prom=(nota1+nota2+nota3)/3
+    
+    const mensaje=(prom<=3.9) ? "estudie" : " becado"
+    
+    return mensaje
+}
 
-const mensaje=(prom<=3.9) ? "estudie" : " becado"
-
-console.log(mensaje);
 
 
