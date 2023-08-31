@@ -2,10 +2,9 @@
 cantidad que lleva el cliente. Mostrar lo que debe pagar el comprador
 en su factura. */
 
-const nombreProducto=prompt("Nombre del producto")
-const valorProducto=Number(prompt("Valor del articulo"))
-const cantidad=Number(prompt(`Cantidad de articulos de ${nombreProducto}`))
+export const calculaFactura=(valorProducto, cantidad)=>{
 
-const valorTotal=valorProducto*cantidad;
-
-console.log(`El valor total a pagar del producto ${nombreProducto} es ${valorTotal}`);
+    const valorTotal=valorProducto*cantidad;
+    
+    return valorTotal
+    }
