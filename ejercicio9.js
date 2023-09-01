@@ -6,29 +6,16 @@ campeona que se quede con la medalla de oro y si rompió
 récord, reportar el pago que será de 500 millones. El récord
 esta en 15,50 metros. */
 
-const cantidad=Number(prompt("Escriba la cantidad de atletas"))
 
-let data=[]
+export const calcularAtletaCampeona=(atletas)=>{
+    let mayorMarca=atletas.reduce((acumulador, item)=> acumulador.marca > item.marca ? acumulador : item).marca;
 
-for(let i=0;i<cantidad;i++){
+    let atleta=atletas.find(atletaa => atletaa.marca===mayorMarca);
 
-    const nombre=prompt("Escriba el nombre del atleta")
-    const marca=Number(prompt(`Escriba la marca de la atleta ${nombre}`))
-    data.unshift({nombre, marca})
-    
+    return atleta.nombre
 }
 
-
-let mayorMarca=data.reduce((acumulador, item)=> acumulador.marca > item.marca ? acumulador : item).marca;
-
-let atleta=data.find(atletaa => atletaa.marca===mayorMarca);
-
-
-
-console.log(`La atleta ${atleta.nombre} tuvo la mayor marca registrada en ${atleta.marca}`);
-
-
-if (atleta.marca>15.5) {
-    console.log("Rompioo el recordd");
+export const calcularRecord=(marca)=>{
+    return marca>15.50 
 }
 
